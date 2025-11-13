@@ -1,0 +1,184 @@
+You are building a modern, responsive, SEO-optimized single-page website in plain HTML, CSS, and JavaScript for a pediatric speech therapy private practice.
+
+PROJECT GOAL
+Rebuild the content from www.JennyLeeSLP.com (Home, About, Services, Contact) into ONE high-converting landing page with a prominent lead-capture form. The site should be easy to port to any hosting environment (no Replit-specific dependencies, no frameworks required; just index.html, styles.css, and script.js).
+
+BRAND & PRACTICE DETAILS
+Business name: Jenny Lee SLP (Jenny Lee LLC)
+Clinician: Jennifer Lee Marshall, MA, CCC-SLP
+Location: Lexington, Kentucky, serving families across Central Kentucky.
+Phone: 859-545-2117
+Credentials & focus (summarize in copy, don’t list as bullets only):
+- Kentucky and Ohio licensed Speech-Language Pathologist.
+- Holds ASHA Certificate of Clinical Competence (CCC-SLP).
+- Member of the American Craniofacial and Cleft-Palate Association.
+- Specializes in pediatric communication and feeding from infancy through school age.
+- Advanced expertise in cleft palate, craniofacial differences, resonance disorders, AAC, and complex cases.
+- Background experience at Cincinnati Children’s Hospital with multidisciplinary teams.
+
+Primary offerings (reflect the “Services” page):
+1) Consultations
+   - Second opinions.
+   - Review of evaluation reports and recommendations for complex cases.
+2) Therapy
+   - Speech sound disorders.
+   - Pediatric language.
+   - Birth to 3 (KY First Steps provider).
+   - Resonance.
+   - AAC trials and device training.
+   - Childhood apraxia of speech.
+   - Feeding.
+3) Screening & Evaluations
+   - Perceptual resonance assessment (sound quality, nasality, VPI, cleft palate).
+   - Articulation.
+   - Expressive & receptive language.
+
+TONE & STYLE
+- Warm, professional, and family-friendly.
+- Position Jennifer as highly specialized but approachable.
+- Emphasize that she helps families feel supported, heard, and guided in complex situations.
+- Make it obvious she has deep expertise with cleft palate / craniofacial populations while still welcoming all pediatric speech and feeding concerns.
+
+SEO REQUIREMENTS
+Optimize for these types of phrases throughout headings, body copy, meta tags, and alt text (where natural and not spammy):
+- “speech therapy Lexington KY”
+- “pediatric speech therapy Lexington”
+- “pediatric speech-language pathologist”
+- “cleft palate speech therapist Kentucky”
+- “craniofacial speech therapist”
+- “feeding therapy for children”
+- “resonance disorders SLP”
+Include:
+- <title> tag with “Speech Therapy Lexington KY | Jenny Lee SLP”.
+- Meta description that clearly states who she is, what she offers, and that she serves families across Central Kentucky.
+- Open Graph tags (title, description, image placeholder).
+- A logical heading hierarchy (one H1, several H2/H3 sections).
+
+PAGE STRUCTURE (SINGLE PAGE)
+Build one scrolling landing page with a sticky navigation bar that anchors to each section.
+
+1) Sticky Header & Navigation
+- Logo text: “Jenny Lee SLP”.
+- Right-side nav links (smooth scroll anchors): “Meet Jenny”, “Services”, “Who I Help”, “Why Families Choose Me”, “Contact”.
+- Include phone number in the top bar (click-to-call link).
+
+2) Hero Section (“above the fold”)
+Goal: Immediately communicate WHO she is, WHAT she does, WHERE she serves, and a clear call-to-action.
+Content:
+- H1: A concise, SEO-friendly headline such as:
+  “Pediatric Speech & Feeding Therapy in Lexington, Kentucky”
+- Short supporting paragraph summarizing:
+  - She is a highly trained pediatric speech-language pathologist serving Lexington and Central Kentucky.
+  - Special focus on cleft palate, craniofacial differences, feeding, speech, and language.
+- Primary CTA button: “Request a Consultation”.
+  - This should scroll to the lead-capture form.
+- Secondary CTA: “Call 859-545-2117” (click-to-call).
+- Include a reassuring line such as:
+  “Helping children communicate and thrive, from infancy through school age.”
+
+3) “Meet Jenny” / About Section
+- Use a friendly photo placeholder.
+- Summarize her background:
+  - Degrees: Biopsychology (UC Santa Barbara), M.A. in Communication Sciences & Disorders (Michigan State).
+  - 6+ years at Cincinnati Children’s Hospital with specialized training in resonance disorders, AAC, multidisciplinary care, and feeding.
+  - Participation in CFAT and VPI clinics with surgeons and multidisciplinary teams.
+- Mention publications and presentations briefly (no need for full citations, just a short list):
+  - Example: “Published in the International Journal of Pediatric Otorhinolaryngology on non-cleft causes of velopharyngeal dysfunction.”
+  - “Presented national webinars on Velocardiofacial/22Q Syndrome and communication/feeding concerns in complex genetic conditions.”
+- End this section with a short empathy-driven paragraph about her passion for helping families across Central Kentucky.
+
+4) Services Section
+Use three clear sub-columns or stacked cards on mobile:
+
+A. Consultations
+- Short description that explains:
+  - Second opinions on complex cases.
+  - Review of existing evaluations and IEPs.
+  - Guidance on next steps for families who feel uncertain.
+- CTA link/button: “Request a Consultation” (scrolls to form).
+
+B. Therapy
+- Short description of ongoing therapy.
+- Bullet list of therapy types:
+  - Speech sound disorders.
+  - Language delays and disorders.
+  - Birth-to-three services (including KY First Steps).
+  - Resonance and voice concerns.
+  - AAC trials and device support.
+  - Childhood apraxia of speech.
+  - Feeding challenges.
+- Clarify that therapy is individualized and family-centered.
+
+C. Screening & Evaluations
+- Explain that she offers:
+  - Screening and comprehensive evaluations for speech, language, resonance, and feeding.
+  - Specialized perceptual resonance assessment for children with cleft palate or suspected VPI.
+- Include reassurance that parents receive clear feedback and a concrete plan.
+
+5) “Who I Help” Section
+- Briefly describe typical clients:
+  - Infants and toddlers with feeding or early communication concerns.
+  - Preschool and school-age children with speech and language delays.
+  - Children with cleft palate, craniofacial differences, or syndromes affecting speech and resonance.
+  - Children who use AAC or may benefit from AAC.
+- Emphasize collaborative approach with families, physicians, surgeons, and school teams when needed.
+
+6) “Why Families Choose Me” Section
+- Use 3–4 short value-based points, such as:
+  - “Highly specialized expertise in cleft palate and resonance disorders.”
+  - “Experience in nationally ranked children’s hospital settings.”
+  - “Personal, one-on-one care in a private practice environment.”
+  - “Clear communication and education for families at every step.”
+- You can add a small “badge” style element for ASHA CCC-SLP certification and membership in craniofacial/cleft-palate association (no official logos, just text and icon).
+
+7) Lead-Capture / Contact Section
+This is the main conversion point.
+
+- Section heading: “Request a Consultation” or “Contact Jenny”.
+- Short paragraph explaining:
+  - She would love to learn about your child and help you decide on next steps.
+  - Response expectations (e.g., “I typically respond within 1–2 business days.”).
+- Include a simple, accessible HTML form with:
+  - Parent/Guardian Name (required).
+  - Child’s Name.
+  - Child’s Age.
+  - Phone number (required).
+  - Email address (required).
+  - Preferred contact method (phone, email dropdown).
+  - Brief description of concerns (textarea).
+  - Checkbox: “I understand this form is for general inquiries and should not be used for emergencies.”
+- On submit:
+  - Use JavaScript to prevent default, validate required fields, and show a friendly “Thank you, your message has been sent” confirmation message.
+  - For now, POST to a placeholder URL “/api/contact” and include a comment in script.js indicating where an email service or backend handler can be integrated later.
+- Also display:
+  - Phone number as click-to-call.
+  - General service area: “Lexington and Central Kentucky”.
+
+8) Footer
+- Include:
+  - Business name: “© 2018–{current year} Jenny Lee LLC.”
+  - Simple text line like: “Proudly serving Lexington and Central Kentucky.”
+  - ASHA CCC-SLP note.
+  - Links/icons for Facebook and Instagram (use placeholder URLs and accessible alt text).
+- Make sure footer is clean and mobile-friendly.
+
+DESIGN REQUIREMENTS
+- Fully responsive and mobile-first.
+- Clean, calm color palette suitable for pediatric healthcare (e.g., soft blues/teals and neutral grays; you choose harmonious colors).
+- Plenty of white space, large readable fonts, and clear headings.
+- Buttons styled consistently with clear hover states.
+- Smooth scroll behavior for nav links.
+- Use system fonts or Google Fonts appropriate for medical / family-oriented brands.
+
+TECHNICAL DETAILS
+- Files: index.html, styles.css, script.js.
+- No external JS frameworks required; use plain JavaScript.
+- Link styles.css and script.js from index.html.
+- Include comments in the code explaining:
+  - Where SEO meta tags are.
+  - How to replace placeholder links (social media, contact endpoint).
+  - How to adjust content for future updates.
+- Ensure semantic HTML (header, nav, main, section, footer) for accessibility and SEO.
+- All images should be placeholders with meaningful alt text so real images can be swapped later.
+
+Deliver the complete code for index.html, styles.css, and script.js in your response.
