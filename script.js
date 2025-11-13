@@ -121,15 +121,74 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Submit form data
-            // IMPORTANT: Replace '/api/contact' with your actual backend endpoint
-            // Options for backend integration:
-            // 1. Use a service like Formspree, FormSubmit, or Basin
-            // 2. Set up a serverless function (Netlify Functions, Vercel, AWS Lambda)
-            // 3. Create a custom backend API endpoint
-            // 4. Use Replit's built-in database and email service
+            // ===================================
+            // FORM SUBMISSION OPTIONS
+            // ===================================
+            // This form needs a backend endpoint to actually send emails.
+            // Choose one of these integration methods:
+            //
+            // OPTION 1: Formspree (Recommended - Easiest)
+            // 1. Sign up at https://formspree.io
+            // 2. Create a form and get your endpoint
+            // 3. Replace the fetch URL below with: 'https://formspree.io/f/YOUR_FORM_ID'
+            //
+            // OPTION 2: FormSubmit (Free, No Signup)
+            // 1. Change the form to use native HTML submission:
+            //    <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+            // 2. Remove this JavaScript submit handler
+            //
+            // OPTION 3: Custom Backend
+            // 1. Create a serverless function or API endpoint
+            // 2. Update the fetch URL to your endpoint
+            // 3. Ensure CORS is configured properly
+            //
+            // OPTION 4: Mailto Link (Simple Fallback)
+            // Opens the user's email client with pre-filled information
             
-            fetch('/api/contact', {
+            // CURRENT IMPLEMENTATION: mailto fallback
+            // This opens the user's default email client with form data
+            const subject = encodeURIComponent('Consultation Request from ' + parentName);
+            const childInfo = data.childName ? `Child's Name: ${data.childName}\n` : '';
+            const ageInfo = data.childAge ? `Child's Age: ${data.childAge}\n` : '';
+            const body = encodeURIComponent(
+                `Parent/Guardian Name: ${parentName}\n` +
+                childInfo +
+                ageInfo +
+                `Phone: ${phone}\n` +
+                `Email: ${email}\n` +
+                `Preferred Contact Method: ${data.contactMethod}\n\n` +
+                `Message:\n${data.message || 'No message provided'}`
+            );
+            
+            // Open email client
+            window.location.href = `mailto:info@jennyleeslp.com?subject=${subject}&body=${body}`;
+            
+            // Show success message
+            formSuccess.style.display = 'flex';
+            
+            // Update success message for mailto method
+            const successMessage = formSuccess.querySelector('p');
+            successMessage.textContent = 'Your email client should open with the message. Please send it to complete your request. If it doesn\'t open, please call 859-545-2117.';
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Scroll to success message
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Hide success message after 15 seconds
+            setTimeout(() => {
+                formSuccess.style.display = 'none';
+                // Restore original message
+                successMessage.textContent = 'Your message has been sent. I\'ll get back to you within 1-2 business days.';
+            }, 15000);
+            
+            // ===================================
+            // ALTERNATIVE: Direct API submission
+            // ===================================
+            // Uncomment this code when you have a working endpoint:
+            /*
+            fetch('YOUR_ENDPOINT_URL', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -138,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Server error: ' + response.status);
                 }
                 return response.json();
             })
@@ -158,18 +217,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 10000);
             })
             .catch(error => {
-                // For demo purposes, show success message even if endpoint doesn't exist
-                // In production, this should show the error message
+                // Show error message
                 console.error('Form submission error:', error);
-                
-                // TEMPORARY: Show success for demo (remove in production)
-                formSuccess.style.display = 'flex';
-                contactForm.reset();
-                
-                // PRODUCTION: Uncomment the lines below and remove the success display above
-                // formError.style.display = 'flex';
-                // formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                formError.style.display = 'flex';
+                formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             });
+            */
         });
     }
     
