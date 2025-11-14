@@ -2,11 +2,11 @@
    CSS Variables & Reset
    =================================== */
 :root {
-    --primary-color: #5aa9c7;
-    --primary-dark: #4890b0;
-    --primary-light: #e8f4f8;
-    --secondary-color: #7ec4dd;
-    --accent-color: #f4a261;
+    --primary-color: #7FA970;
+    --primary-dark: #6B8F5F;
+    --primary-light: #E8F3E5;
+    --secondary-color: #9AC184;
+    --accent-color: #E89BA0;
     
     --text-dark: #2c3e50;
     --text-medium: #546e7a;
