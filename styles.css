@@ -180,10 +180,22 @@ img {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    display: block;
 }
 
 .logo a:hover {
     color: var(--primary-dark);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    opacity: 0.85;
 }
 
 .nav-toggle {
