@@ -480,6 +480,21 @@ img {
     font-size: 0.95rem;
 }
 
+.therapy-image-section {
+    margin: 3rem auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.therapy-photo {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    margin: 0 auto;
+}
+
 .collaborative-approach {
     max-width: 800px;
     margin: 0 auto;
