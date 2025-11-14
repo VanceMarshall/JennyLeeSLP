@@ -2,10 +2,10 @@
    CSS Variables & Reset
    =================================== */
 :root {
-    --primary-color: #7FA970;
-    --primary-dark: #6B8F5F;
+    --primary-color: #5F7E46;
+    --primary-dark: #4A6234;
     --primary-light: #E8F3E5;
-    --secondary-color: #9AC184;
+    --secondary-color: #7FA970;
     --accent-color: #E89BA0;
     
     --text-dark: #2c3e50;
@@ -72,13 +72,14 @@ p {
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--primary-dark);
     text-decoration: none;
     transition: var(--transition);
 }
 
 a:hover {
     color: var(--primary-dark);
+    text-decoration: underline;
 }
 
 img {
@@ -139,12 +140,12 @@ img {
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-dark);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-color);
+    background-color: var(--primary-dark);
     color: white;
 }
 
@@ -240,7 +241,7 @@ img {
     background-color: var(--primary-light);
     padding: 0.5rem 1rem;
     border-radius: 6px;
-    color: var(--primary-color);
+    color: var(--primary-dark);
     font-weight: 600;
 }
 
@@ -278,7 +279,7 @@ img {
 
 .hero-tagline {
     font-size: 1.1rem;
-    color: var(--primary-color);
+    color: var(--primary-dark);
     font-weight: 600;
     margin-bottom: 2rem;
 }
@@ -317,7 +318,7 @@ img {
 
 .intro-text {
     font-size: 1.2rem;
-    color: var(--primary-color);
+    color: var(--primary-dark);
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
@@ -350,7 +351,7 @@ img {
     content: "→";
     position: absolute;
     left: 0;
-    color: var(--primary-color);
+    color: var(--primary-dark);
     font-weight: bold;
 }
 
@@ -542,7 +543,7 @@ img {
     position: absolute;
     top: -1rem;
     left: 2rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     width: 50px;
     height: 50px;
@@ -659,7 +660,7 @@ img {
 }
 
 .contact-detail a {
-    color: var(--primary-color);
+    color: var(--primary-dark);
     font-weight: 600;
 }
 
@@ -752,7 +753,7 @@ img {
 }
 
 .form-message.success svg {
-    color: #28a745;
+    color: #155724;
 }
 
 .form-message.error {
@@ -824,7 +825,11 @@ img {
 }
 
 .footer-contact a {
-    color: var(--secondary-color);
+    color: #A8D5A8;
+}
+
+.footer-contact a:hover {
+    color: #C8E6C9;
 }
 
 .social-links {
@@ -855,7 +860,7 @@ img {
 }
 
 .footer-bottom p {
-    color: #95a5a6;
+    color: #bdc3c7;
     font-size: 0.9rem;
 }
 
