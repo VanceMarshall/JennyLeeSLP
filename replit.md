@@ -9,6 +9,13 @@ This is a modern, responsive, SEO-optimized single-page website for Jenny Lee SL
 **Version**: 1.0
 
 ## Recent Changes
+- **2026-02-25**: Restructure, simplify, and accordion
+  - Removed "Why Families Choose Me" section entirely
+  - Reordered sections: Hero → Who I Help → Services → Meet Jenny → Contact
+  - Trimmed hero to single subtitle line (removed redundant tagline)
+  - Added expandable accordion to Meet Jenny (Her story / Clinical background / Publications & research) — collapsed by default, pure JS/CSS, no libraries
+  - Moved ASHA CCC-SLP · ACPA Member · KY & OH Licensed to footer credential line
+  - Updated nav to match new section order
 - **2026-02-25**: Content simplification and brand refresh
   - Rewrote all copy to be shorter, warmer, and more conversational for young-mom audience
   - Replaced credentials box with inline pill badges in Meet Jenny section

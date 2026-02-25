@@ -244,6 +244,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ===================================
+    // Accordion — Meet Jenny
+    // ===================================
+    const accordionToggles = document.querySelectorAll('.accordion-toggle');
+
+    accordionToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const panel = this.nextElementSibling;
+            const isOpen = this.getAttribute('aria-expanded') === 'true';
+
+            // Close all panels
+            accordionToggles.forEach(t => {
+                t.setAttribute('aria-expanded', 'false');
+                const p = t.nextElementSibling;
+                p.setAttribute('hidden', '');
+            });
+
+            // Open clicked panel if it was closed
+            if (!isOpen) {
+                this.setAttribute('aria-expanded', 'true');
+                panel.removeAttribute('hidden');
+            }
+        });
+    });
+
+    // ===================================
     // Accessibility: Keyboard Navigation
     // ===================================
     document.addEventListener('keydown', function(e) {
