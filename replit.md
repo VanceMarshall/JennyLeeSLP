@@ -9,6 +9,14 @@ This is a modern, responsive, SEO-optimized single-page website for Jenny Lee SL
 **Version**: 1.0
 
 ## Recent Changes
+- **2026-02-25**: Content simplification and brand refresh
+  - Rewrote all copy to be shorter, warmer, and more conversational for young-mom audience
+  - Replaced credentials box with inline pill badges in Meet Jenny section
+  - Replaced numbered Why-Choose cards with icon + text list layout
+  - Removed "Collaborative Approach" box and "service-benefit" blocks
+  - Added `text-wrap: balance` and `text-wrap: pretty` to prevent orphan words
+  - Added real logo (images/logo.png), headshot (images/headshot.jpg), therapy photo (images/therapy.jpg)
+  - Updated color scheme to sage green matching brand logo
 - **2025-11-13**: Initial website build complete
   - Created responsive single-page design with 7 main sections
   - Implemented SEO optimization with meta tags and Open Graph tags
