@@ -121,108 +121,54 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // ===================================
-            // FORM SUBMISSION OPTIONS
-            // ===================================
-            // This form needs a backend endpoint to actually send emails.
-            // Choose one of these integration methods:
-            //
-            // OPTION 1: Formspree (Recommended - Easiest)
-            // 1. Sign up at https://formspree.io
-            // 2. Create a form and get your endpoint
-            // 3. Replace the fetch URL below with: 'https://formspree.io/f/YOUR_FORM_ID'
-            //
-            // OPTION 2: FormSubmit (Free, No Signup)
-            // 1. Change the form to use native HTML submission:
-            //    <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
-            // 2. Remove this JavaScript submit handler
-            //
-            // OPTION 3: Custom Backend
-            // 1. Create a serverless function or API endpoint
-            // 2. Update the fetch URL to your endpoint
-            // 3. Ensure CORS is configured properly
-            //
-            // OPTION 4: Mailto Link (Simple Fallback)
-            // Opens the user's email client with pre-filled information
-            
-            // CURRENT IMPLEMENTATION: mailto fallback
-            // This opens the user's default email client with form data
-            const subject = encodeURIComponent('Consultation Request from ' + parentName);
+            // Build the message body
             const childInfo = data.childName ? `Child's Name: ${data.childName}\n` : '';
             const ageInfo = data.childAge ? `Child's Age: ${data.childAge}\n` : '';
-            const body = encodeURIComponent(
-                `Parent/Guardian Name: ${parentName}\n` +
+            const messageBody =
+                `Parent/Guardian: ${parentName}\n` +
                 childInfo +
                 ageInfo +
                 `Phone: ${phone}\n` +
                 `Email: ${email}\n` +
-                `Preferred Contact Method: ${data.contactMethod}\n\n` +
-                `Message:\n${data.message || 'No message provided'}`
-            );
-            
-            // Open email client
-            window.location.href = `mailto:info@jennyleeslp.com?subject=${subject}&body=${body}`;
-            
-            // Show success message
-            formSuccess.style.display = 'flex';
-            
-            // Update success message for mailto method
-            const successMessage = formSuccess.querySelector('p');
-            successMessage.textContent = 'Your email client should open with the message. Please send it to complete your request. If it doesn\'t open, please call 859-545-2117.';
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Scroll to success message
-            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            
-            // Hide success message after 15 seconds
-            setTimeout(() => {
-                formSuccess.style.display = 'none';
-                // Restore original message
-                successMessage.textContent = 'Your message has been sent. I\'ll get back to you within 1-2 business days.';
-            }, 15000);
-            
-            // ===================================
-            // ALTERNATIVE: Direct API submission
-            // ===================================
-            // Uncomment this code when you have a working endpoint:
-            /*
-            fetch('YOUR_ENDPOINT_URL', {
+                `Best contact method: ${data.contactMethod}\n\n` +
+                `Message:\n${data.message || '(none)'}`;
+
+            // Submit via Web3Forms
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+
+            fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    access_key: '13597395-7513-4001-81bc-3bf1876f7ee0',
+                    subject: `Consultation Request from ${parentName}`,
+                    name: parentName,
+                    email: email,
+                    message: messageBody
+                })
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Server error: ' + response.status);
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(result => {
-                // Show success message
-                formSuccess.style.display = 'flex';
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Scroll to success message
-                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                
-                // Hide success message after 10 seconds
-                setTimeout(() => {
-                    formSuccess.style.display = 'none';
-                }, 10000);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send My Message';
+                if (result.success) {
+                    formSuccess.style.display = 'flex';
+                    contactForm.reset();
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    setTimeout(() => { formSuccess.style.display = 'none'; }, 10000);
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
             })
             .catch(error => {
-                // Show error message
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send My Message';
                 console.error('Form submission error:', error);
                 formError.style.display = 'flex';
                 formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             });
-            */
         });
     }
     
