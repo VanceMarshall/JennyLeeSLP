@@ -9,6 +9,14 @@ This is a modern, responsive, SEO-optimized single-page website for Jenny Lee SL
 **Version**: 1.0
 
 ## Recent Changes
+- **2026-03-18**: Accuracy, copy, and SEO pass
+  - Removed all em-dashes site-wide (replaced with commas, periods, or semicolons)
+  - Updated license to KY only (removed Ohio references from badge, accordion, footer)
+  - Updated service area to "Lexington, Central KY, and select virtual patients" in 3 locations
+  - Replaced placeholder Publications & Research accordion text with real citation (Kummer, Marshall & Wilson 2015) and two speechpathology.com webinars (2016)
+  - Updated SEO meta description and keywords to include virtual/teletherapy terms
+  - Added missing og:url meta tag
+  - Added JSON-LD LocalBusiness + MedicalBusiness structured data schema block
 - **2026-02-25**: Restructure, simplify, and accordion
   - Removed "Why Families Choose Me" section entirely
   - Reordered sections: Hero → Who I Help → Services → Meet Jenny → Contact
