@@ -827,6 +827,15 @@ img {
     font-size: 0.9rem;
 }
 
+.footer-bottom a {
+    color: #bdc3c7;
+    text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+    color: #ffffff;
+}
+
 /* ===================================
    Responsive — Tablet (≤ 992px)
    =================================== */

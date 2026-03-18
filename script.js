@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     subject: `Consultation Request from ${parentName}`,
                     name: parentName,
                     email: email,
+                    phone: phone,
                     message: messageBody
                 })
             })
@@ -230,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerText = document.querySelector('.footer-bottom p');
     if (footerText) {
         const currentYear = new Date().getFullYear();
-        footerText.innerHTML = `&copy; 2018–${currentYear} Jenny Lee LLC. All rights reserved.`;
+        footerText.innerHTML = `&copy; 2018–${currentYear} Jenny Lee LLC. All rights reserved. &nbsp;&middot;&nbsp; <a href="/privacy.html">Privacy Policy</a>`;
     }
     
     // ===================================
