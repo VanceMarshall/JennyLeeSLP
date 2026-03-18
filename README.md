@@ -129,7 +129,7 @@ Update the CSS variables in `styles.css`:
 
 ### Current Implementation: Web3Forms
 
-The contact form submits directly to **Web3Forms** (web3forms.com), which delivers each submission to `info@jennyleeslp.com`. No visitor action is required beyond clicking "Send My Message" — there is no email client involved.
+The contact form submits directly to **Web3Forms** (web3forms.com), which delivers each submission to `admin@jennyleeslp.com`. No visitor action is required beyond clicking "Send My Message" — there is no email client involved.
 
 **How it works:**
 1. Visitor fills out and submits the form

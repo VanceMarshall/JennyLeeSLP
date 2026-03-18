@@ -144,8 +144,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify({
                     access_key: '13597395-7513-4001-81bc-3bf1876f7ee0',
                     subject: `Consultation Request from ${parentName}`,
-                    name: parentName,
-                    email: email,
+                    from_name: parentName,
+                    email: 'admin@jennyleeslp.com',
+                    reply_to: email,
                     phone: phone,
                     message: messageBody
                 })
