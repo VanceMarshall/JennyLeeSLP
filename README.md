@@ -127,57 +127,31 @@ Update the CSS variables in `styles.css`:
 
 ## 📧 Contact Form Integration
 
-### Current Implementation: Mailto Link
+### Current Implementation: Web3Forms
 
-The contact form currently uses a **mailto link** as a working fallback solution. When a visitor submits the form, their default email client opens with all the form data pre-filled. This ensures lead capture works immediately without requiring backend setup.
+The contact form submits directly to **Web3Forms** (web3forms.com), which delivers each submission to `info@jennyleeslp.com`. No visitor action is required beyond clicking "Send My Message" — there is no email client involved.
 
 **How it works:**
 1. Visitor fills out and submits the form
 2. Form validates the input
-3. Default email client opens with a pre-filled message to `info@jennyleeslp.com`
-4. Visitor clicks "Send" in their email client to complete the submission
+3. A JSON payload is sent via `fetch()` to `https://api.web3forms.com/submit`
+4. Web3Forms delivers the message to Jenny's inbox
+5. A success or error message is shown in-page
 
-**Important:** Update the email address in `script.js` (line 167):
-```javascript
-window.location.href = `mailto:YOUR_EMAIL@example.com?subject=${subject}&body=${body}`;
-```
+**Fields sent:** `access_key`, `subject`, `name`, `email`, `phone`, `message` (formatted combination of all form fields).
 
-### Upgrading to a Better Solution
+The Web3Forms access key is stored directly in `script.js`. The free tier allows 250 submissions/month, which is ample for a small practice.
 
-For a more professional experience, implement one of these backend solutions:
+### Changing the Email Destination
 
-#### Option 1: Formspree (Recommended - Easiest)
+To route submissions to a different inbox:
+1. Go to [web3forms.com](https://web3forms.com) and enter the new email address
+2. Retrieve the new access key from the confirmation email
+3. Update the `access_key` value in `script.js`
 
-1. Sign up at [formspree.io](https://formspree.io) (free tier available)
-2. Create a new form and get your endpoint URL
-3. In `script.js`, uncomment the fetch code (lines 193-228) and update:
+#### Alternative Backend API
 
-```javascript
-fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data)
-})
-```
-
-4. Comment out or remove the mailto implementation (lines 151-187)
-
-#### Option 2: FormSubmit (No Signup Required)
-
-1. Visit [formsubmit.co](https://formsubmit.co)
-2. Change the form to use native HTML submission in `index.html`:
-
-```html
-<form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
-```
-
-3. Remove the JavaScript submit handler from `script.js`
-
-#### Option 3: Custom Backend API
-
-Create a serverless function or API endpoint to handle form submissions:
+To replace Web3Forms with a custom endpoint:
 
 ```javascript
 fetch('YOUR_ENDPOINT_URL', {
